@@ -153,21 +153,21 @@ JS8Call transmissions are 15 seconds per frame at Normal speed. The same VOX beh
 
 ## TrailDigi (Android)
 
-[TrailDigi](https://codeberg.org/traildigi/traildigi) is a SOTA/POTA-optimised Android FT8/FT4 app, purpose-built for portable HF operation with radios like Pebble HF.
+[TrailDigi](https://codeberg.org/traildigi/traildigi) is a SOTA/POTA-optimised Android FT8/FT4 app, purpose-built for portable HF operation. It supports CAT control for many rigs, but CAT is entirely optional — transmit timing is driven purely by sending audio at the right moment, so with no rig selected it works exactly the way Pebble HF needs: audio in, audio out, VOX does the rest.
 
 1. Connect your USB audio dongle to your Android phone or tablet using a USB OTG adapter, then connect the dongle to Pebble HF's audio jack via a TRS cable. Power Pebble HF from a separate source (USB power bank or battery).
-2. Open TrailDigi and go to **Settings → Audio**.
-3. Select **USB Audio Device** (your audio dongle) as both audio input and output.
+2. Android routes audio to the USB dongle automatically once it's connected — there's no device picker inside TrailDigi itself (Settings → Audio there only controls sample rate and bit depth, not which device is used).
+3. In TrailDigi, leave the rig setting unset (Pebble HF isn't a listed rig, since it has no CAT interface).
 4. Enable VOX on the radio (menu 3.1).
 5. Set the radio VFO to the desired frequency (14.074 MHz for FT8).
 
-TrailDigi handles timing, decoding, and logging automatically. No separate PTT or CAT connection is required.
+TrailDigi handles timing, decoding, and logging automatically. With no rig selected, TrailDigi never sends a CAT/PTT command — it just plays the transmit audio, and Pebble HF's own VOX keys the radio.
 
 ---
 
 ## FT8TW (Android)
 
-[FT8TW](https://github.com/N0BOT/FT8TW) is the upstream Android app from which TrailDigi is derived. Connection and configuration are identical to TrailDigi above.
+[FT8TW](https://github.com/danleetw/FT8TW) is the upstream Android app from which TrailDigi is derived. Connection and configuration are identical to TrailDigi above.
 
 ---
 

@@ -23,6 +23,28 @@ Audio to and from Pebble HF passes through the radio's **3.5mm TRS audio jack**.
 
 > **Power note:** On USB-C (5V), Pebble HF produces approximately 1W of RF output. On a 7–14V battery, output rises to approximately 5W. For SOTA and POTA activations requiring more power, connect a separate battery to the power input.
 
+### Connection Diagram
+
+Most USB audio dongles (CM108-based or similar) bring out two separate 3.5mm jacks, colour-coded
+the same way as a desktop PC's audio ports:
+
+```
+  Host device                USB audio dongle              Pebble HF
+ ┌────────────┐   USB    ┌───────────────────┐  3.5mm  ┌─────────────┐
+ │  Computer, │──────────│ ● Input  (red)    │◄────────│  Headphone  │
+ │  phone, or │          │ ● Output (green)  │────────►│  / mic-key  │
+ │  tablet    │          └───────────────────┘         │  audio jack │
+ └────────────┘                                         └─────────────┘
+```
+
+| Sound card jack | Connects to |
+|---|---|
+| **Input (red)** | Pebble HF headphone output |
+| **Output (green)** | Pebble HF mic/key input |
+
+Both audio connections share the radio's single 3.5mm TRS jack. Power (USB) is a separate
+connection — see the equipment list above.
+
 ---
 
 ## Radio Settings for Digital Modes
